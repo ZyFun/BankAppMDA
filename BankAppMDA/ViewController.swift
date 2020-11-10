@@ -12,15 +12,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var amountLabel: UILabel?
     
     var amount = 9999.99 {
+        // Обновляем значение amountLabel после внесения изменений
         didSet {
             updateAmountLabel()
         }
     }
     
     func updateAmountLabel() {
-        // Задаём стиль amountLabel
+        // Задаём стиль amountLabel на валютный
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
+        // Присваиваем значение валюты
         formatter.currencySymbol = "₽"
         
         let number = NSNumber(value: amount)

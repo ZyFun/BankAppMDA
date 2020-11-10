@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bjs-Lr-BBg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Баланс-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BankAppMDA" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Баланс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eO-5G-f6p">
-                                <rect key="frame" x="150" y="434" width="114" height="38.5"/>
+                                <rect key="frame" x="150" y="409.5" width="114" height="38.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999999.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwR-we-cfa" userLabel="Amount">
-                                <rect key="frame" x="107.5" y="514.5" width="199" height="39"/>
+                                <rect key="frame" x="107.5" y="490" width="199" height="39"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -38,16 +38,92 @@
                             <constraint firstItem="ZwR-we-cfa" firstAttribute="top" secondItem="6eO-5G-f6p" secondAttribute="bottom" constant="42" id="yyX-LX-GLw"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Баланс" image="dollarsign.circle" catalog="system" id="Tr0-gI-S8E"/>
                     <connections>
                         <outlet property="amountLabel" destination="ZwR-we-cfa" id="vnJ-ku-GMX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="102"/>
+            <point key="canvasLocation" x="713.04347826086962" y="101.78571428571428"/>
+        </scene>
+        <!--Кредит-->
+        <scene sceneID="e4t-2D-lWM">
+            <objects>
+                <viewController id="19C-Q7-1su" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hhw-Y4-Xot">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OEu-Fi-mmG">
+                                <rect key="frame" x="16" y="194" width="382" height="272.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ежемесячный платеж" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpP-3y-MJ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRN-sr-1Q9">
+                                        <rect key="frame" x="0.0" y="58.5" width="382" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Сумма кредита" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Loa-gi-Y17">
+                                        <rect key="frame" x="0.0" y="117" width="382" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Срок в месяцах" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-Tp-gIH">
+                                        <rect key="frame" x="0.0" y="175.5" width="382" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Годовая ставка" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFa-gM-2uB">
+                                        <rect key="frame" x="0.0" y="234" width="382" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4N4-r1-UmP"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="OEu-Fi-mmG" firstAttribute="top" secondItem="4N4-r1-UmP" secondAttribute="top" constant="150" id="HKz-Mo-VCB"/>
+                            <constraint firstItem="4N4-r1-UmP" firstAttribute="trailing" secondItem="OEu-Fi-mmG" secondAttribute="trailing" constant="16" id="b2S-2K-MK5"/>
+                            <constraint firstItem="OEu-Fi-mmG" firstAttribute="leading" secondItem="4N4-r1-UmP" secondAttribute="leading" constant="16" id="qYt-3Z-TCF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Кредит" image="creditcard.circle" catalog="system" id="V6n-q1-rcG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSK-Y6-6pv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473.913043478261" y="101.78571428571428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="G4q-xk-Jbe">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bjs-Lr-BBg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lCb-CZ-dzL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="AJT-vD-6If"/>
+                        <segue destination="19C-Q7-1su" kind="relationship" relationship="viewControllers" id="TVM-ct-SUT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8f-H6-s2t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="101.78571428571428"/>
         </scene>
     </scenes>
     <resources>
+        <image name="creditcard.circle" catalog="system" width="128" height="121"/>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
