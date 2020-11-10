@@ -38,6 +38,9 @@
                             <constraint firstItem="ZwR-we-cfa" firstAttribute="top" secondItem="6eO-5G-f6p" secondAttribute="bottom" constant="42" id="yyX-LX-GLw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="ZwR-we-cfa" id="vnJ-ku-GMX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
