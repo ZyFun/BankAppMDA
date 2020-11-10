@@ -50,7 +50,7 @@
         <!--Кредит-->
         <scene sceneID="e4t-2D-lWM">
             <objects>
-                <viewController id="19C-Q7-1su" sceneMemberID="viewController">
+                <viewController id="19C-Q7-1su" customClass="ViewController" customModule="BankAppMDA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hhw-Y4-Xot">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,16 +74,25 @@
                                         <rect key="frame" x="0.0" y="117" width="382" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="19C-Q7-1su" eventType="editingChanged" id="n2W-Ih-IHk"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Срок в месяцах" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-Tp-gIH">
                                         <rect key="frame" x="0.0" y="175.5" width="382" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="19C-Q7-1su" eventType="editingChanged" id="Gbw-7W-Yyy"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Годовая ставка" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFa-gM-2uB">
                                         <rect key="frame" x="0.0" y="234" width="382" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="19C-Q7-1su" eventType="editingChanged" id="ZOi-64-qQ3"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -97,6 +106,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Кредит" image="creditcard.circle" catalog="system" id="V6n-q1-rcG"/>
+                    <connections>
+                        <outlet property="nperTextField" destination="Rhy-Tp-gIH" id="4P8-3P-5gc"/>
+                        <outlet property="pvTextField" destination="Loa-gi-Y17" id="T8T-Kq-hDi"/>
+                        <outlet property="rateTextField" destination="HFa-gM-2uB" id="OFS-oH-luj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSK-Y6-6pv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
