@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: - Outlrts
     @IBOutlet weak var amountLabel: UILabel?
+    @IBOutlet weak var monthlyPaymentLabel: UILabel?
+    
     
     @IBOutlet weak var pvTextField: UITextField?
     @IBOutlet weak var nperTextField: UITextField?
@@ -24,6 +26,12 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Methods
+    // Убираем клавиатуру касаясь любой части экрана
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     func updateAmountLabel() {
         // Задаём стиль amountLabel на валютный
         let formatter = NumberFormatter()
@@ -35,15 +43,28 @@ class ViewController: UIViewController {
         amountLabel?.text = formatter.string(from: number)
     }
     
+    func updateMonthlyAmountLabel() {
+        monthlyPaymentLabel?.text = "0.00"
+        
+        guard let pv = Double(pvTextField?.text ?? "") else { return }
+        guard let nper = Double(nperTextField?.text ?? "") else { return }
+        guard let rate = Double(rateTextField?.text ?? "") else { return }
+        
+        let monthlyPayment = abs(ExcelFormulas.pmt(rate: rate / 100 / 12, nper: nper, pv: pv)) // abs это функция значения по модулю
+        monthlyPaymentLabel?.text = "\(monthlyPayment)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         updateAmountLabel()
-        amount += 1
+        updateMonthlyAmountLabel()
     }
     
+    // MARK: - Actions
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         print(sender.text ?? "nil")
+        updateMonthlyAmountLabel()
     }
 }
 
