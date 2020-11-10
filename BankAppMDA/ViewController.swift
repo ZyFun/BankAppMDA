@@ -33,25 +33,18 @@ class ViewController: UIViewController {
     }
     
     func updateAmountLabel() {
-        // Задаём стиль amountLabel на валютный
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        // Присваиваем значение валюты
-        formatter.currencySymbol = "₽"
-        
-        let number = NSNumber(value: amount)
-        amountLabel?.text = formatter.string(from: number)
+        amountLabel?.text = amount.asCurrency()
     }
     
     func updateMonthlyAmountLabel() {
-        monthlyPaymentLabel?.text = "0.00"
+        monthlyPaymentLabel?.text = "0,00 ₽"
         
         guard let pv = Double(pvTextField?.text ?? "") else { return }
         guard let nper = Double(nperTextField?.text ?? "") else { return }
         guard let rate = Double(rateTextField?.text ?? "") else { return }
         
         let monthlyPayment = abs(ExcelFormulas.pmt(rate: rate / 100 / 12, nper: nper, pv: pv)) // abs это функция значения по модулю
-        monthlyPaymentLabel?.text = "\(monthlyPayment)"
+        monthlyPaymentLabel?.text = monthlyPayment.asCurrency()
     }
     
     override func viewDidLoad() {
